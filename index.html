@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WalkDuk Apparel</title>
+    <!-- Menghubungkan huruf Poppins dan file CSS (pertemuan 4) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- HEADER: nama usaha dan menu -->
+    <header>
+        <h1>WalkDuk Apparel</h1>
+        <p><em>Jersey Running</em></p>
+        <nav>
+            <a href="#tentang">Tentang</a> |
+            <a href="#produk">Produk</a> |
+            <a href="#kontak">Kontak</a>
+        </nav>
+    </header>
+    <main>
+        <!-- BAGIAN TENTANG -->
+        <section id="tentang">
+            <h2>Tentang Kami</h2>
+            <p>Walkduk adalah sebuah brand pakaian untuk olahraga
+                <strong>bahan premium</strong> sejak 2026.
+            </p>
+            <img src="img/02_cb59fbeb-5ed2-4907-afff-776d7360d536.webp" alt="Jersey" width="50%">
+            <h3>Mengapa Memilih Kami?</h3>
+            <ul>
+                <li>Bahan sangat premium</li>
+                <li>Jahitan sangat rapih</li>
+            </ul>
+            <h3>Cara Pemesanan</h3>
+            <ol>
+                <li>Pilih produk dan jumlah</li>
+                <li>Hubungi kami melalui WhatsApp</li>
+                <li>Lakukan pembayaran, pesanan dikirim</li>
+            </ol>
+        </section>
+        <!-- BAGIAN PRODUK -->
+        <section id="produk">
+            <h2>Produk dan Harga</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Produk</th>
+                        <th>Ukuran</th>
+                        <th>Harga</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jersey Running corak putih</td>
+                        <td>S - XXL</td>
+                        <td>Rp.35.000</td>
+                    </tr>
+                    <tr>
+                        <td>Jersey Running corak hitam</td>
+                        <td>S - XXL</td>
+                        <td>Rp.35.000</td>
+                    </tr>
+                    <tr>
+                        <td>Jersey Running corak merah</td>
+                        <td>S - XXL</td>
+                        <td>Rp.35.000</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><img src="img/produk-2.jpg" alt="walkdukk"></p>
+            <!-- Tempat video YouTube: tempel kode iframe dari YouTube di sini -->
+        </section>
+        <!-- BAGIAN KONTAK -->
+        <section id="kontak">
+            <h2>Hubungi Kami</h2>
+            <p>Jl. Profesor DR. HR Boenyamin No.78<br>Banyumas, Jawa Tengah</p>
+            <p>
+                <a class="tombol-wa" href="https://wa.me/6281234567890?text=Halo%20Sekar%20Arum,%20saya%20mau%20pesan"
+                    target="_blank">Pesan via WhatsApp</a>
+            </p>
+            <form action="#" method="post">
+                <label for="nama">Nama</label><br>
+                <input type="text" id="nama" name="nama" required><br><br>
+                <label for="wa">Nomor WhatsApp</label><br>
+                <input type="tel" id="wa" name="wa" placeholder="0812..." required><br><br>
+                <label for="pesan">Pesan</label><br>
+                <textarea id="pesan" name="pesan" rows="4"></textarea><br><br>
+                <button type="submit">Kirim</button>
+            </form>
+            <!-- Tempat peta: tempel kode iframe dari Google Maps di sini -->
+        </section>
+    </main>
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Walkduk Apparel. Jl. Profesor DR. HR Boenyamin No.78.</p>
+    </footer>
+</body>
+
+</html>
