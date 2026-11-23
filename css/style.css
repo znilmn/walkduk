@@ -30,15 +30,32 @@ img, svg { display: block; max-width: 100%; }
 
 /* ===== HEADER ===== */
 .header {
-  position: relative;
-  z-index: 100;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 108px;
+  height: 100px;
   padding: 0 52px;
-  border: 1px solid var(--border);
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  transition: height .3s cubic-bezier(0.16, 1, 0.3, 1),
+              background .3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow .3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color .3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.header.is-scrolled {
+  height: 80px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06),
+              inset 0 -1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .logo {
@@ -48,11 +65,17 @@ img, svg { display: block; max-width: 100%; }
 
 .logo img,
 .logo svg {
-  height: 52px;
+  height: 50px;
   width: auto;
   max-width: 200px;
   object-fit: contain;
   display: block;
+  transition: height .3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.header.is-scrolled .logo img,
+.header.is-scrolled .logo svg {
+  height: 42px;
 }
 
 .menu-toggle {
@@ -371,9 +394,12 @@ img, svg { display: block; max-width: 100%; }
 
 /* ===== TABLET ===== */
 @media (max-width: 1024px) {
-  .header { padding: 0 28px; height: 90px; }
+  .header { padding: 0 28px; height: 86px; }
+  .header.is-scrolled { height: 72px; }
   .logo img,
   .logo svg { height: 44px; max-width: 160px; }
+  .header.is-scrolled .logo img,
+  .header.is-scrolled .logo svg { height: 38px; }
   .nav { gap: 28px; }
   .nav a { font-size: 18px; }
   .hero__frame { height: 340px; }
@@ -388,9 +414,12 @@ img, svg { display: block; max-width: 100%; }
 @media (max-width: 640px) {
   :root { --gutter: 16px; }
 
-  .header { height: 72px; padding: 0 16px; }
+  .header { height: 70px; padding: 0 16px; }
+  .header.is-scrolled { height: 60px; }
   .logo img,
   .logo svg { height: 36px; max-width: 120px; }
+  .header.is-scrolled .logo img,
+  .header.is-scrolled .logo svg { height: 32px; }
 
   /* Tombol Hamburger */
   .menu-toggle {
@@ -429,19 +458,21 @@ img, svg { display: block; max-width: 100%; }
     transform: translateY(-7px) rotate(-45deg);
   }
 
-  /* Menu Dropdown HP */
+  /* Menu Dropdown HP (Frosted Glass) */
   .nav {
     position: absolute;
     top: 100%;
-    left: -1px;
-    right: -1px;
-    background: var(--white);
-    border: 1px solid var(--border);
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     border-top: none;
     flex-direction: column;
     padding: 12px 20px 20px;
     gap: 0;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, .08);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, .08);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-8px);

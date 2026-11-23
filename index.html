@@ -188,6 +188,23 @@
   </footer>
 
   <script>
+    // Dynamic Glass Header saat di-scroll
+    (function () {
+      var header = document.querySelector('.header');
+      if (!header) return;
+
+      function updateHeader() {
+        if (window.scrollY > 15) {
+          header.classList.add('is-scrolled');
+        } else {
+          header.classList.remove('is-scrolled');
+        }
+      }
+
+      window.addEventListener('scroll', updateHeader, { passive: true });
+      updateHeader();
+    })();
+
     // Hamburger menu toggle (HP)
     (function () {
       var toggle = document.querySelector('.menu-toggle');
