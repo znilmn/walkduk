@@ -187,7 +187,40 @@
     <p class="footer__copy">© 2026 Walkduk. Semua hak dilindungi.</p>
   </footer>
 
+  <!-- ===== TOMBOL KEMBALI KE ATAS ===== -->
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Kembali ke atas" title="Kembali ke atas">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4"
+      stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="19" x2="12" y2="5"></line>
+      <polyline points="5 12 12 5 19 12"></polyline>
+    </svg>
+  </button>
+
   <script>
+    // Tombol Scroll ke Atas
+    (function () {
+      var scrollBtn = document.getElementById('scrollTopBtn');
+      if (!scrollBtn) return;
+
+      function checkScroll() {
+        if (window.scrollY > 280) {
+          scrollBtn.classList.add('is-visible');
+        } else {
+          scrollBtn.classList.remove('is-visible');
+        }
+      }
+
+      window.addEventListener('scroll', checkScroll, { passive: true });
+      checkScroll();
+
+      scrollBtn.addEventListener('click', function () {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    })();
+
     // Dynamic Glass Header saat di-scroll
     (function () {
       var header = document.querySelector('.header');
