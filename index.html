@@ -11,7 +11,54 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=2">
+  <style>
+    /* Floating Scroll to Top Glass Button */
+    .scroll-top {
+      position: fixed !important;
+      bottom: 32px !important;
+      right: 32px !important;
+      width: 48px !important;
+      height: 48px !important;
+      border-radius: 50% !important;
+      background: rgba(255, 255, 255, 0.8) !important;
+      backdrop-filter: blur(16px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.9) !important;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.9) !important;
+      color: #111 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      cursor: pointer !important;
+      z-index: 9999 !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      transform: translateY(16px) scale(0.9) !important;
+      transition: opacity .3s cubic-bezier(0.16, 1, 0.3, 1), transform .3s cubic-bezier(0.16, 1, 0.3, 1), visibility .3s, background .2s, box-shadow .2s !important;
+    }
+    .scroll-top.is-visible {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: translateY(0) scale(1) !important;
+    }
+    .scroll-top:hover {
+      background: rgba(255, 255, 255, 0.95) !important;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18), inset 0 1px 1px #fff !important;
+      transform: translateY(-3px) scale(1.05) !important;
+    }
+    .scroll-top:active {
+      transform: translateY(0) scale(0.95) !important;
+    }
+    @media (max-width: 640px) {
+      .scroll-top {
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 42px !important;
+        height: 42px !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
